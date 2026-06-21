@@ -1,0 +1,236 @@
+@font-face {
+font-family: 'IBM VGA 8x16';
+src: url('assets/WebPlus_IBM_VGA_9x16.woff') format('woff');
+font-weight: normal;
+font-style: normal;
+}
+body {
+margin: 0;
+background-color: white;
+background-image: url('assets/background.gif');
+background-repeat: repeat;
+background-size: 250px 250px;
+color: black;
+font-family: Verdana;
+}
+a {
+color: #4169E1;
+text-decoration: none;
+}
+a:hover {
+text-decoration: underline;
+}
+.box {
+width: 960px;
+max-width: 100%;
+min-height: 100vh;
+margin: 0 auto;
+background-color: #000000;
+color: #ffffff;
+box-sizing: border-box;
+padding: 20px;
+font-family: 'IBM VGA 8x16', monospace;
+font-size: 16px;
+line-height: 16px;
+}
+.box h1 {
+text-align: center;
+}
+.ascii-title {
+color:#dd8500;  
+font-family: monospace;
+font-size: 16px;
+line-height: 16px;
+text-align: center;
+display: inline-block;
+width: 100%;
+white-space: pre;
+margin: 20px 0;
+}
+.marquee-bar {
+width: 100%;
+overflow: hidden;
+background-color: #000000;
+border-bottom: 1px solid #3b3b3b;
+box-sizing: border-box;
+}
+.marquee-track {
+display: inline-block;
+white-space: nowrap;
+padding-left: 100%;
+animation: scroll-left 20s linear infinite;
+}
+.marquee-track span {
+color: #ffffff;
+font-family: 'IBM VGA 8x16', monospace;
+font-size: 16px;
+line-height: 16px;
+}
+@keyframes scroll-left {
+  0% {
+transform: translateX(0);
+  }
+  100% {
+transform: translateX(-100%);
+  }
+}
+.box p.center {
+text-align: center;
+}
+.tree-list {
+font-family: 'IBM VGA 8x16', monospace;
+font-size: 16px;
+line-height: 16px;
+white-space: pre;
+margin: 20px 0;
+}
+.icon-row {
+display: flex;
+justify-content: center;
+align-items: center;
+gap: 2px;
+margin: 16px 0;
+}
+.icon-img {
+display: block;
+}
+.highlight {
+background-color: #4169E1;
+color: #ffffff;
+padding: 0 2px;
+}
+.solar-widget {
+position: fixed;
+top: 30px;
+left: 10px;
+z-index: 10;
+}
+.image-widget {
+position: fixed;
+top: 535px;
+left: 10px;
+z-index: 10;
+}
+.image-widget img {
+display: block;
+width: 80%;
+height: auto;
+}
+.clock-widget {
+position: fixed;
+top: 30px;
+right: 10px;
+z-index: 10;
+}
+
+
+.tv-widget {
+position: relative;
+width: 550px;
+}
+.tv-frame {
+display: block;
+width: 100%;
+height: auto;
+position: relative;
+z-index: 2;
+pointer-events: none;
+}
+.tv-screen {
+position: absolute;
+top: 16%;
+left: 12%;
+width: 76%;
+height: 54%;
+border: none;
+z-index: 1;
+}
+
+.hover-gif-widget {
+position: fixed;
+top: 120px;
+right: -55px;
+z-index: 10;
+}
+.hover-gif {
+position: relative;
+display: block;
+width: 280px;
+}
+.hover-gif-still,
+.hover-gif-anim {
+display: block;
+width: 60%;
+height: auto;
+}
+.hover-gif-anim {
+position: absolute;
+top: 0;
+left: 0;
+opacity: 0;
+}
+.hover-gif:hover .hover-gif-still {
+opacity: 0;
+}
+.hover-gif:hover .hover-gif-anim {
+opacity: 1;
+}
+
+
+
+.eliza-widget {
+position: fixed;
+top: 300px;
+right: 10px;
+z-index: 10;
+width: 255px;
+background-color: #000000;
+border: 2px solid #4c4d4c;
+font-family: 'IBM VGA 8x16', monospace;
+font-size: 13px;
+line-height: 16px;
+}
+.eliza-titlebar {
+background-color: #3f3f3f;
+color: #000000;
+padding: 2px 6px;
+font-weight: bold;
+}
+.eliza-output {
+color: #ffffff;
+padding: 6px;
+height: 390px;
+overflow-y: auto;
+white-space: pre-wrap;
+}
+.eliza-input-row {
+display: flex;
+align-items: center;
+border-top: 1px solid #ffffff;
+padding: 4px 6px;
+}
+.eliza-prompt {
+color: #3f3f3f;
+margin-right: 4px;
+}
+.eliza-input {
+flex: 1;
+background-color: #000000;
+color: #ffffff;
+border: none;
+outline: none;
+font-family: 'IBM VGA 8x16', monospace;
+font-size: 13px;
+}
+@media (max-width: 1500px) {
+.solar-widget,
+.image-widget,
+.eliza-widget{
+display: none;
+}
+}
+@media (max-width: 1700px) {
+.tv-widget {
+display: none;
+}
+}
