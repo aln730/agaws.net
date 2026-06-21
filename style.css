@@ -6,7 +6,7 @@ font-style: normal;
 }
 body {
 margin: 0;
-background-color: white;
+background-color: rgb(0, 0, 0);
 background-image: url('assets/background.gif');
 background-repeat: repeat;
 background-size: 250px 250px;
@@ -48,11 +48,13 @@ white-space: pre;
 margin: 20px 0;
 }
 .marquee-bar {
+position: relative;
 width: 100%;
 overflow: hidden;
 background-color: #000000;
 border-bottom: 1px solid #3b3b3b;
 box-sizing: border-box;
+z-index: 5;
 }
 .marquee-track {
 display: inline-block;
@@ -110,10 +112,13 @@ position: fixed;
 top: 535px;
 left: 10px;
 z-index: 10;
+width: 400px;
+height: auto;
+overflow: hidden;
 }
 .image-widget img {
 display: block;
-width: 80%;
+width: 100%;
 height: auto;
 }
 .clock-widget {
@@ -122,11 +127,9 @@ top: 30px;
 right: 10px;
 z-index: 10;
 }
-
-
 .tv-widget {
 position: relative;
-width: 550px;
+width: 500px;
 }
 .tv-frame {
 display: block;
@@ -138,24 +141,23 @@ pointer-events: none;
 }
 .tv-screen {
 position: absolute;
-top: 16%;
+top: 10%;
 left: 12%;
 width: 76%;
-height: 54%;
+height: 62%;
 border: none;
 z-index: 1;
 }
-
 .hover-gif-widget {
 position: fixed;
-top: 120px;
-right: -55px;
+top: 85px;
+right: -140px;
 z-index: 10;
 }
 .hover-gif {
 position: relative;
 display: block;
-width: 280px;
+width: 400px;
 }
 .hover-gif-still,
 .hover-gif-anim {
@@ -175,9 +177,6 @@ opacity: 0;
 .hover-gif:hover .hover-gif-anim {
 opacity: 1;
 }
-
-
-
 .eliza-widget {
 position: fixed;
 top: 300px;
@@ -199,7 +198,7 @@ font-weight: bold;
 .eliza-output {
 color: #ffffff;
 padding: 6px;
-height: 390px;
+height: 300px;
 overflow-y: auto;
 white-space: pre-wrap;
 }
