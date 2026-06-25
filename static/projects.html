@@ -3,12 +3,27 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>/home</title>
+<title>/projects</title>
 <link href="/style.css" rel="stylesheet" type="text/css" media="all">
 </head>
 <body>
 <div class="box">
-<p>> UNDER CONSTRUCTION</p>
+<p><a href="https://agaws.net/">/home</a> <a href="projects.html">/projects</a></p>
+
+<span class="highlight">[[[Projects]]]</span>
+    
+<pre class="tree-list">
+┗━ <a href="https://github.com/aln730/gatekeeper-pam/tree/main">gatekeeper-pam</a>
+
+        A Linux PAM module enabling NFC-based authentication.
+
+   ┣━ Centralized identity: keys are tied to LDAP uids, so access control is managed in one place 
+   ┃  across all machines.
+   ┣━ Privilege separation: NFC hardware and realm keys live in a dedicated daemon; the PAM module 
+   ┃  is a thin Unix socket client.
+   ┗━ Secure: backed by DESFire AES-encrypted NFC authentication.
+</pre>
+
 </div>
 </body>
 </html>

@@ -13,6 +13,10 @@ background-size: 250px 250px;
 color: black;
 font-family: Verdana;
 }
+.page-wrapper {
+position: relative;
+overflow-x: hidden;
+}
 a {
 color: #4169E1;
 text-decoration: none;
@@ -37,7 +41,7 @@ line-height: 16px;
 text-align: center;
 }
 .ascii-title {
-color:#dd8500;  
+color:#dd8500;
 font-family: monospace;
 font-size: 16px;
 line-height: 16px;
@@ -102,13 +106,13 @@ color: #ffffff;
 padding: 0 2px;
 }
 .solar-widget {
-position: fixed;
+position: absolute;
 top: 30px;
 left: 10px;
 z-index: 10;
 }
 .image-widget {
-position: fixed;
+position: absolute;
 top: 535px;
 left: 10px;
 z-index: 10;
@@ -122,7 +126,7 @@ width: 100%;
 height: auto;
 }
 .clock-widget {
-position: fixed;
+position: absolute;
 top: 30px;
 right: 10px;
 z-index: 10;
@@ -149,7 +153,7 @@ border: none;
 z-index: 1;
 }
 .hover-gif-widget {
-position: fixed;
+position: absolute;
 top: 85px;
 right: -140px;
 z-index: 10;
@@ -178,7 +182,7 @@ opacity: 0;
 opacity: 1;
 }
 .eliza-widget {
-position: fixed;
+position: absolute;
 top: 300px;
 right: 10px;
 z-index: 10;
@@ -222,14 +226,30 @@ font-family: 'IBM VGA 8x16', monospace;
 font-size: 13px;
 }
 @media (max-width: 1500px) {
-.solar-widget,
-.image-widget,
-.eliza-widget{
-display: none;
-}
+  .solar-widget,
+  .image-widget,
+  .eliza-widget,
+  .hover-gif-widget,
+  .iss-widget,
+  .bb-widget {
+    display: none;
+  }
 }
 @media (max-width: 1700px) {
 .tv-widget {
 display: none;
 }
+}
+.bb-widget {
+  position: absolute;
+  top: 700px;
+  left: 10px;
+  z-index: 1;
+  width: 320px;
+}
+
+.bb-widget img {
+  display: block;
+  width: 100%;
+  height: auto;
 }
