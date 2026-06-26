@@ -236,11 +236,7 @@ font-size: 13px;
     display: none;
   }
 }
-@media (max-width: 1700px) {
-.tv-widget {
-display: none;
-}
-}
+
 .bb-widget {
   position: absolute;
   top: 700px;
@@ -257,8 +253,8 @@ display: none;
 
 .nix-widget {
   position: absolute;
-  top: 700px;
-  left: -6px;
+  top: 1200px;
+  left: -20px;
   z-index: 1;
   width: 320px;
 }
