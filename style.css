@@ -245,7 +245,8 @@ a:hover {
   .hover-gif-widget,
   .iss-widget,
   .bb-widget,
-  .nix-widget {
+  .nix-widget,
+  .quote-widget {
     display: none;
   }
 }
@@ -260,7 +261,7 @@ a:hover {
 .bb-widget {
   position: absolute;
   top: 700px;
-  left: 10px;
+  left: -10px;
   z-index: 1;
   width: 320px;
 }
@@ -280,4 +281,56 @@ a:hover {
   display: block;
   width: 100%;
   height: auto;
+}
+
+.quote-widget {
+  position: absolute;
+  top: 680px;
+  right: 10px;
+  z-index: 10;
+}
+.w95-box {
+  background: #c0c0c0;
+  border-top: 2px solid #fff;
+  border-left: 2px solid #fff;
+  border-right: 2px solid #000;
+  border-bottom: 2px solid #000;
+  padding: 2px;
+  width: 250px;
+  font-family: sans-serif;
+  font-size: 12px;
+  color: #000;
+}
+.w95-title {
+  background: #000080;
+  color: #fff;
+  font-weight: bold;
+  padding: 3px;
+  display: flex;
+  justify-content: space-between;
+}
+.w95-content {
+  padding: 15px;
+  text-align: center;
+  min-height: 40px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-style: italic;
+}
+.w95-btn {
+  background: #c0c0c0;
+  border-top: 1px solid #fff;
+  border-left: 1px solid #fff;
+  border-right: 1px solid #000;
+  border-bottom: 1px solid #000;
+  padding: 4px 15px;
+  cursor: pointer;
+  margin-bottom: 5px;
+}
+.w95-btn:active {
+  border-top: 1px solid #000;
+  border-left: 1px solid #000;
+  border-right: 1px solid #fff;
+  border-bottom: 1px solid #fff;
 }
