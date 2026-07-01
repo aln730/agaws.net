@@ -53,6 +53,13 @@ a:hover {
 .box video {
   max-width: 100%;
 }
+
+.box hr {
+  border: none;
+  border-top: 1px solid #3b3b3b;
+  margin: 16px 0;
+}
+
 .ascii-title {
   color: #dd8500;
   font-family: monospace;
