@@ -5,6 +5,8 @@ User-agent: *
 Allow: /
 
 # If you do not want AI bots to crawl your site, remove the  from the following lines:
+
+Disallow: /
 User-agent: AI2Bot
 User-agent: Ai2Bot-Dolma
 User-agent: Amazonbot
@@ -45,4 +47,3 @@ User-agent: Timpibot
 User-agent: VelenPublicWebCrawler
 User-agent: Webzio-Extended
 User-agent: YouBot
-Disallow: /
