@@ -1,29 +1,53 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>/projects</title>
-<link href="/style.css" rel="stylesheet" type="text/css" media="all">
+<title>/projects - Arnav Gawas</title>
+<link href="style.css" rel="stylesheet" type="text/css" media="all">
 </head>
 <body>
-<div class="box">
-<p><a href="https://agaws.net/">/home</a> <a href="projects.html">/projects</a></p>
+<header class="pageTitle">
+<a class="siteName" href="/">AGAWS.NET</a>
+<div class="badges">
+<a href="https://agaws.net"><img src="assets/agawsnet.gif" alt="agaws.net"></a>
+<a href="https://coolmathgames.tech/"><img src="assets/maryhouse.png" alt="coolmathgames.tech"></a>
+<a href="https://nilges.me/"><img src="assets/wilnil_takeone.gif" alt="nilges.me"></a>
+</div>
+</header>
 
-<span class="highlight">[[[Projects]]]</span>
-    
-<pre class="tree-list">
-┗━ <a href="https://github.com/aln730/gatekeeper-pam/tree/main">gatekeeper-pam</a>
+<details class="mobileNav">
+<summary>Menu</summary>
+<a class="sidebarLink" href="/">Home</a>
+<a class="sidebarLink" href="projects.html">Projects</a>
+<a class="sidebarLink" href="blog.html">Blog</a>
+<a class="sidebarLink" href="directory.html">Directory</a>
+<a class="sidebarLink" href="https://zxcv.atabook.org/">Guestbook</a>
+<a class="sidebarLink" href="https://github.com/aln730">GitHub</a>
+</details>
 
-   A Linux PAM module enabling NFC-based authentication.
+<nav class="sidebar" aria-label="Main">
+<a class="sidebarLink" href="/">Home</a>
+<a class="sidebarLink" href="projects.html">Projects</a>
+<a class="sidebarLink" href="blog.html">Blog</a>
+<a class="sidebarLink" href="directory.html">Directory</a>
+<a class="sidebarLink" href="https://github.com/aln730">GitHub</a>
+<a class="sidebarLink" href="https://discord.com/channels/@aiubnf">Discord</a>
+<a class="sidebarLink" href="https://zxcv.atabook.org/">Guestbook</a>
+</nav>
 
-   ┣━ Centralized identity: keys are tied to LDAP uids, so access control is managed in one place 
-   ┃  across all machines.
-   ┣━ Privilege separation: NFC hardware and realm keys live in a dedicated daemon; the PAM module 
-   ┃  is a thin Unix socket client.
-   ┗━ Secure: backed by DESFire AES-encrypted NFC authentication.
-</pre>
+<div class="layout single">
+<main class="mainContent">
+<h2>Projects</h2>
 
+<h3 class="item"><a href="https://github.com/aln730/gatekeeper-pam/tree/main">gatekeeper-pam</a></h3>
+<p>A Linux PAM module enabling NFC-based authentication.</p>
+<ul class="detail">
+<li><strong>Centralized identity:</strong> keys are tied to LDAP uids, so access control is managed in one place across all machines.</li>
+<li><strong>Privilege separation:</strong> NFC hardware and realm keys live in a dedicated daemon; the PAM module is a thin Unix socket client.</li>
+<li><strong>Secure:</strong> backed by DESFire AES-encrypted NFC authentication.</li>
+</ul>
+</main>
 </div>
 </body>
 </html>
