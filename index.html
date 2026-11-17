@@ -41,34 +41,65 @@ Discord: <a href="https://discord.com/channels/@aiubnf">@aiubnf</a><br>
 
 <div class="gadgets">
 <div class="ipod">
-<iframe src="https://www.youtube-nocookie.com/embed/tCUJVLZqNdk" class="ipod-screen" title="Video" loading="lazy" allow="encrypted-media; picture-in-picture; fullscreen" allowfullscreen></iframe>
+<video class="ipod-screen" id="ipod-video" src="assets/video.mp4" poster="assets/poster.jpg" playsinline preload="metadata"></video>
 <img src="assets/ipod.png" class="ipod-frame" alt="" width="699" height="1080">
+<button type="button" class="wheel-btn" id="ipod-play" aria-label="Play/Pause" style="left:50%;top:82%"></button>
+<button type="button" class="wheel-btn" id="ipod-center" aria-label="Play/Pause" style="left:50%;top:68.6%"></button>
+<button type="button" class="wheel-btn" id="ipod-prev" aria-label="Restart" style="left:29.8%;top:68.6%"></button>
+<button type="button" class="wheel-btn" id="ipod-next" aria-label="Skip 10 seconds" style="left:69.7%;top:68.6%"></button>
 </div>
 <div class="camera">
 <img class="camera-shot" id="camera-shot" src="assets/gallery/baldy.jpeg" alt="Photo">
 <img class="camera-frame" src="assets/camera.png" alt="" width="641" height="402">
+<button type="button" class="wheel-btn" id="cam-prev" aria-label="Previous photo" style="left:76.4%;top:59.9%;width:8%;height:14%"></button>
+<button type="button" class="wheel-btn" id="cam-ok" aria-label="Next photo" style="left:82.2%;top:59.9%;width:8%;height:14%"></button>
+<button type="button" class="wheel-btn" id="cam-next" aria-label="Next photo" style="left:88%;top:59.9%;width:8%;height:14%"></button>
 </div>
 <div class="tv">
 <img src="assets/gallery/tv.png" class="tv-frame" alt="" width="500" height="500">
-<iframe src="https://weatherstar.netbymatt.com/?hazards=true&current-weather=true&latest-observations=true&hourly=true&hourly-graph=true&travel=true&regional-forecast=true&local-forecast=true&extended-forecast=true&almanac=true&spc-outlook=true&radar=true&kiosk=true&stickyKiosk=false&customTextEnable=true&speed=1.00&viewMode=standard&units=us&txtLocation=Chicago%2C+IL%2C+USA&customText=CHOM.TV&mediaVolume=0.75&wide=false&portrait=false&enhanced=false&scanLines=true&latLonQuery=Chicago%2C+IL%2C+USA&latLon=%7B%22lat%22%3A41.8832%2C%22lon%22%3A-87.6323%7D" class="tv-screen" title="Weather" loading="lazy"></iframe>
+<div class="tv-screen" id="tv-screen"><iframe src="https://weatherstar.netbymatt.com/?hazards=true&current-weather=true&latest-observations=true&hourly=true&hourly-graph=true&travel=true&regional-forecast=true&local-forecast=true&extended-forecast=true&almanac=true&spc-outlook=true&radar=true&kiosk=true&stickyKiosk=false&customTextEnable=true&speed=1.00&viewMode=standard&units=us&txtLocation=Chicago%2C+IL%2C+USA&customText=CHOM.TV&mediaVolume=0.75&wide=false&portrait=false&enhanced=false&scanLines=true&latLonQuery=Chicago%2C+IL%2C+USA&latLon=%7B%22lat%22%3A41.8832%2C%22lon%22%3A-87.6323%7D" id="tv-iframe" title="Weather" loading="lazy"></iframe></div>
 </div>
 </div>
 
 <script>
 var photos = [
-    "baldy.jpeg", "brandreth.jpg", "bridge.jpeg", "ducks.jpeg", "fam.jpg",
-    "galaxy.jpeg", "greenblue.jpeg", "snow.jpg", "stars.jpeg", "swamp.jpeg"
+    "snow.jpg", "greenblue.jpeg", "baldy.jpeg", "brandreth.jpg", "bridge.jpeg", "ducks.jpeg", "fam.jpg",
+    "galaxy.jpeg", "stars.jpeg", "swamp.jpeg"
 ];
 var shot = document.getElementById("camera-shot");
 var i = 0;
 
-function next() {
+function show(n) {
+    i = (n + photos.length) % photos.length;
     shot.src = "assets/gallery/" + photos[i];
-    i = (i + 1) % photos.length;
 }
 
-next();
-setInterval(next, 10000);
+show(0);
+document.getElementById("cam-prev").onclick = function () { show(i - 1); };
+document.getElementById("cam-ok").onclick = function () { show(i + 1); };
+document.getElementById("cam-next").onclick = function () { show(i + 1); };
+
+
+var vid = document.getElementById("ipod-video");
+function toggle() { if (vid.paused) { vid.play(); } else { vid.pause(); } }
+document.getElementById("ipod-play").onclick = toggle;
+document.getElementById("ipod-center").onclick = toggle;
+document.getElementById("ipod-prev").onclick = function () { vid.currentTime = 0; };
+document.getElementById("ipod-next").onclick = function () {
+    vid.currentTime = Math.min(vid.currentTime + 10, vid.duration || Infinity);
+};
+
+var tvBox = document.getElementById("tv-screen");
+var tvFrame = document.getElementById("tv-iframe");
+function fitTv() {
+    var w = tvBox.clientWidth, h = tvBox.clientHeight;
+    var s = Math.min(w / 640, h / 480);
+    tvFrame.style.transform = "scale(" + s + ")";
+    tvFrame.style.left = ((w - 640 * s) / 2) + "px";
+    tvFrame.style.top = ((h - 480 * s) / 2) + "px";
+}
+new ResizeObserver(fitTv).observe(tvBox);
+fitTv();
 </script>
 
 </body>
